@@ -29,6 +29,12 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
 
+" .po file
+Bundle 'po.vim'
+
+" color scheme
+Bundle 'molokai'
+
 filetype plugin indent on
 syntax on
 
@@ -90,4 +96,26 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
+
+" Translator information
+let g:po_translator = "Nan Deng <monnand@gmail.com>"
+let g:po_lang_team = "Chinese (Simplified)"
+
+" Easily change my vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Easily quote something
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+vnoremap <leader>" <esc>`<i"<esc>`>a"<esc>l
+
+" do not use <esc>
+inoremap jk <esc>
+vnoremap jk <esc>
+
+" Let's gofmt it before saving it
+autocmd BufWritePre *.go :Fmt
+
+" Tips:
+" - normal mode, :Vex[plore] :Ex[plore] :Sex[plore]
 
