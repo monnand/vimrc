@@ -35,6 +35,9 @@ Bundle 'po.vim'
 " color scheme
 Bundle 'molokai'
 
+" erlang
+Bundle 'jimenezrick/vimerl'
+
 filetype plugin indent on
 syntax on
 
@@ -115,6 +118,12 @@ vnoremap jk <esc>
 
 " Let's gofmt it before saving it
 autocmd BufWritePre *.go :Fmt
+
+" golint
+" To install golint:
+"   go get github.com/golang/lint/golint
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+
 
 " Tips:
 " - normal mode, :Vex[plore] :Ex[plore] :Sex[plore]
