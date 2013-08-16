@@ -128,3 +128,5 @@ set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 " Tips:
 " - normal mode, :Vex[plore] :Ex[plore] :Sex[plore]
 
+" movement mapping. See LVSH (Learn VIM Script the Hardway) 15.1
+onoremap p i(
