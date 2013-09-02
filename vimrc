@@ -15,6 +15,10 @@ Bundle 'spf13/vim-colors'
 " Go
 Bundle 'monnand/vim-golang'
 
+" To install godef:
+"   go get code.google.com/p/rog-go/exp/cmd/godef
+Bundle 'dgryski/vim-godef'
+
 " To install gocode:
 "   go get github.com/nsf/gocode
 Bundle 'undx/vim-gocode'
@@ -38,9 +42,29 @@ Bundle 'molokai'
 " erlang
 Bundle 'jimenezrick/vimerl'
 
+" ---------------- Some general hack --------------
 filetype plugin indent on
 syntax on
 
+" Easily change my vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Easily quote something
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+vnoremap <leader>" <esc>`<i"<esc>`>a"<esc>l
+
+" do not use <esc>
+inoremap jk <esc>
+vnoremap jk <esc>
+
+" Tips:
+" - normal mode, :Vex[plore] :Ex[plore] :Sex[plore]
+
+" movement mapping. See LVSH (Learn VIM Script the Hardway) 15.1
+onoremap p i(
+
+"
 " Set status line
 if has('statusline')
 	set laststatus=2
@@ -65,6 +89,9 @@ let mapleader = ','
 
 " Yank from the cursor to the end of the line
 nnoremap Y y$
+
+" -------------------------------------------
+
 
 " Python indent
 au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
@@ -104,18 +131,6 @@ let g:tagbar_type_go = {
 let g:po_translator = "Nan Deng <monnand@gmail.com>"
 let g:po_lang_team = "Chinese (Simplified)"
 
-" Easily change my vimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" Easily quote something
-nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
-vnoremap <leader>" <esc>`<i"<esc>`>a"<esc>l
-
-" do not use <esc>
-inoremap jk <esc>
-vnoremap jk <esc>
-
 " Let's gofmt it before saving it
 autocmd BufWritePre *.go :Fmt
 
@@ -123,10 +138,3 @@ autocmd BufWritePre *.go :Fmt
 " To install golint:
 "   go get github.com/golang/lint/golint
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-
-
-" Tips:
-" - normal mode, :Vex[plore] :Ex[plore] :Sex[plore]
-
-" movement mapping. See LVSH (Learn VIM Script the Hardway) 15.1
-onoremap p i(
