@@ -14,7 +14,9 @@ Bundle 'spf13/vim-colors'
 
 " Go
 " We are using cespare's modification,
-" which uses bradfitz's goimports instead of gofmt
+" which uses bradfitz's goimports instead of gofmt.
+"
+" With goimports, you can add missing imports automatically.
 "
 " To install goimport:
 "   go get github.com/bradfitz/goimports
