@@ -13,7 +13,12 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'spf13/vim-colors'
 
 " Go
-Bundle 'monnand/vim-golang'
+" We are using cespare's modification,
+" which uses bradfitz's goimports instead of gofmt
+"
+" To install goimport:
+"   go get github.com/bradfitz/goimports
+Bundle 'cespare/vim-golang'
 
 " To install godef:
 "   go get code.google.com/p/rog-go/exp/cmd/godef
@@ -45,6 +50,9 @@ Bundle 'jimenezrick/vimerl'
 " ---------------- Some general hack --------------
 filetype plugin indent on
 syntax on
+
+" Set the leader
+let mapleader = ','
 
 " Easily change my vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -83,9 +91,6 @@ set hlsearch		" highlite search
 set showmatch		" show matching {}/()
 
 set pastetoggle=<F12>	" pastetoggle
-
-" Set the leader
-let mapleader = ','
 
 " Yank from the cursor to the end of the line
 nnoremap Y y$
