@@ -15,6 +15,10 @@ Bundle 'spf13/vim-colors'
 " fugitive.vim: A Git wrapper so awesome, it should be illegal.
 Bundle 'tpope/vim-fugitive'
 
+" Easy motion. A tutorial could be found here:
+" http://net.tutsplus.com/tutorials/other/vim-essential-plugin-easymotion/
+Bundle 'Lokaltog/vim-easymotion'
+
 " Go
 " We are using cespare's modification,
 " which uses bradfitz's goimports instead of gofmt.
