@@ -2,6 +2,9 @@ set nocompatible
 
 set background=dark
 
+" Set the leader
+let mapleader = ','
+
 " Setup Vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -17,6 +20,8 @@ Bundle 'tpope/vim-fugitive'
 
 " Easy motion. A tutorial could be found here:
 " http://net.tutsplus.com/tutorials/other/vim-essential-plugin-easymotion/
+" Note: The default leader has been changed to <Leader><Leader>
+" Type ,,w to see the magic happens.
 Bundle 'Lokaltog/vim-easymotion'
 
 " Go
@@ -59,9 +64,6 @@ Bundle 'jimenezrick/vimerl'
 " ---------------- Some general hack --------------
 filetype plugin indent on
 syntax on
-
-" Set the leader
-let mapleader = ','
 
 " Easily change my vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
