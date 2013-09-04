@@ -12,6 +12,9 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'spf13/vim-colors'
 
+" fugitive.vim: A Git wrapper so awesome, it should be illegal.
+Bundle 'tpope/vim-fugitive'
+
 " Go
 " We are using cespare's modification,
 " which uses bradfitz's goimports instead of gofmt.
