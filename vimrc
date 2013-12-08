@@ -1,3 +1,15 @@
+" This vimrc is opmtimized for Go programming language.
+" To use this configuration, make sure you have
+" installed Go ( http://golang.org ). Once you installed
+" Go environment, use the following commands to install
+" other tools:
+"
+"   go get github.com/bradfitz/goimports
+"   go get code.google.com/p/rog-go/exp/cmd/godef
+"   go get github.com/nsf/gocode
+"   go get github.com/jstemmer/gotags
+"   go get github.com/golang/lint/golint
+"
 set nocompatible
 
 set background=dark
@@ -40,7 +52,8 @@ Bundle 'dgryski/vim-godef'
 
 " To install gocode:
 "   go get github.com/nsf/gocode
-Bundle 'undx/vim-gocode'
+"Bundle 'undx/vim-gocode'
+Bundle 'Blackrush/vim-gocode'
 
 " Markdown
 Bundle 'monnand/vim-markdown'
@@ -101,6 +114,12 @@ set foldenable		" auto fold code
 set hlsearch		" highlite search
 set showmatch		" show matching {}/()
 
+
+" set cursor line and column
+set cursorline
+set cursorcolumn
+
+
 set pastetoggle=<F12>	" pastetoggle
 
 " Yank from the cursor to the end of the line
@@ -150,7 +169,16 @@ let g:po_lang_team = "Chinese (Simplified)"
 " Let's gofmt it before saving it
 autocmd BufWritePre *.go :Fmt
 
+" TeX file should be aligned
+autocmd BufWritePre *.tex :set tw=80
+
 " golint
 " To install golint:
 "   go get github.com/golang/lint/golint
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+
+" tags
+" C-\ - Open the definition in a new tab
+" A-] - Open the definition in a vertical split
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
