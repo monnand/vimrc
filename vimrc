@@ -23,18 +23,41 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" General
+" NERDTree
 Bundle 'scrooloose/nerdtree'
+nnoremap <leader>ne :NERDTree<CR>
 Bundle 'spf13/vim-colors'
 
 " fugitive.vim: A Git wrapper so awesome, it should be illegal.
 Bundle 'tpope/vim-fugitive'
+
+" YouCompleteMe
+" https://github.com/Valloric/YouCompleteMe
+"
+" To use this on Ubuntu, we need to update vim to the latest version.
+" Use this PPA: https://launchpad.net/~nmi/+archive/vim-snapshots
+"
+" sudo add-apt-repository ppa:nmi/vim-snapshots
+" sudo apt-get update
+" sudo apt-get dist-upgrade
+"
+" Then compile YCM:
+"
+" sudo apt-get install build-essential cmake
+" sudo apt-get install python-dev
+"
+" cd ~/.vim/bundle/YouCompleteMe
+" ./install.sh --clang-completer
+Bundle 'Valloric/YouCompleteMe'
 
 " Easy motion. A tutorial could be found here:
 " http://net.tutsplus.com/tutorials/other/vim-essential-plugin-easymotion/
 " Note: The default leader has been changed to <Leader><Leader>
 " Type ,,w to see the magic happens.
 Bundle 'Lokaltog/vim-easymotion'
+
+" protobuf
+Bundle 'uarun/vim-protobuf'
 
 " Go
 " We are using cespare's modification,
@@ -64,6 +87,7 @@ Bundle 'mattn/zencoding-vim'
 " Tagbar
 Bundle 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
+
 
 " .po file
 Bundle 'po.vim'
