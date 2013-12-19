@@ -49,6 +49,10 @@ Bundle 'tpope/vim-fugitive'
 " cd ~/.vim/bundle/YouCompleteMe
 " ./install.sh --clang-completer
 Bundle 'Valloric/YouCompleteMe'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+Bundle 'scrooloose/syntastic'
 
 " Easy motion. A tutorial could be found here:
 " http://net.tutsplus.com/tutorials/other/vim-essential-plugin-easymotion/
