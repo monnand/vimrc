@@ -92,7 +92,6 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
 
-
 " .po file
 Bundle 'po.vim'
 
@@ -105,6 +104,12 @@ Bundle 'jimenezrick/vimerl'
 " ---------------- Some general hack --------------
 filetype plugin indent on
 syntax on
+
+" Easier split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Easily change my vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -133,6 +138,9 @@ if has('statusline')
 	set statusline=%<%f\ " Filename
 	set statusline+=%w%h%m%r " Options
 	set statusline+=\ [%{&ff}/%Y] " filetype
+	" csindent.vim
+	" http://www.vim.org/scripts/script.php?script_id=2633
+	set statusline+=\ [%{CodingStyleIndent()}] " csindent
 	set statusline+=\ [%{getcwd()}] " current dir
 	set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
 endif
