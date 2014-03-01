@@ -49,7 +49,10 @@ Bundle 'tpope/vim-fugitive'
 " cd ~/.vim/bundle/YouCompleteMe
 " ./install.sh --clang-completer
 Bundle 'Valloric/YouCompleteMe'
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
+" let g:ycm_server_use_vim_stdout = 1
+" let g:ycm_server_log_level = 'debug'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 Bundle 'scrooloose/syntastic'
@@ -59,6 +62,11 @@ Bundle 'scrooloose/syntastic'
 " Note: The default leader has been changed to <Leader><Leader>
 " Type ,,w to see the magic happens.
 Bundle 'Lokaltog/vim-easymotion'
+
+" tmux navigator.
+" More details:
+" http://robots.thoughtbot.com/seamlessly-navigate-vim-and-tmux-splits
+Bundle 'christoomey/vim-tmux-navigator'
 
 " protobuf
 Bundle 'uarun/vim-protobuf'
@@ -71,7 +79,7 @@ Bundle 'uarun/vim-protobuf'
 "
 " To install goimport:
 "   go get github.com/bradfitz/goimports
-Bundle 'cespare/vim-golang'
+" Bundle 'cespare/vim-golang'
 
 " To install godef:
 "   go get code.google.com/p/rog-go/exp/cmd/godef
@@ -86,7 +94,7 @@ Bundle 'Blackrush/vim-gocode'
 Bundle 'monnand/vim-markdown'
 
 " HTML
-Bundle 'mattn/zencoding-vim'
+" Bundle "mattn/emmet-vim"
 
 " Tagbar
 Bundle 'majutsushi/tagbar'
@@ -203,7 +211,10 @@ let g:po_translator = "Nan Deng <monnand@gmail.com>"
 let g:po_lang_team = "Chinese (Simplified)"
 
 " Let's gofmt it before saving it
-autocmd BufWritePre *.go :Fmt
+" autocmd BufWritePre *.go :Fmt
+" Use goimports instead of gofmt.
+let g:gofmt_command = "goimports"
+let g:go_fmt_autofmt = 1
 
 " TeX file should be aligned
 autocmd BufWritePre *.tex :set tw=80
