@@ -54,8 +54,12 @@ let g:ycm_confirm_extra_conf = 0
 " let g:ycm_server_use_vim_stdout = 1
 " let g:ycm_server_log_level = 'debug'
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
+" Works best with YCM
 Bundle 'scrooloose/syntastic'
+
+" We have to use LaTeX. It's not perfect, but it's the only game in this town.
+" And it's much better than others.
+Bundle 'jcf/vim-latex'
 
 " Easy motion. A tutorial could be found here:
 " http://net.tutsplus.com/tutorials/other/vim-essential-plugin-easymotion/
@@ -83,12 +87,30 @@ Bundle 'uarun/vim-protobuf'
 
 " To install godef:
 "   go get code.google.com/p/rog-go/exp/cmd/godef
-Bundle 'dgryski/vim-godef'
+" Bundle 'dgryski/vim-godef'
 
 " To install gocode:
 "   go get github.com/nsf/gocode
 "Bundle 'undx/vim-gocode'
-Bundle 'Blackrush/vim-gocode'
+"Bundle 'Blackrush/vim-gocode'
+Bundle 'fatih/vim-go'
+
+au FileType go nmap <Leader>i <Plug>(go-import)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap gd <Plug>(go-def)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+Bundle 'SirVer/ultisnips'
+
+" Handle the issues between utilsnips and YCM
+let g:UltiSnipsExpandTrigger = '<c-j>'
+
 
 " Markdown
 Bundle 'monnand/vim-markdown'
@@ -160,7 +182,7 @@ set showmatch		" show matching {}/()
 
 
 " set cursor line and column
-set cursorline
+" set cursorline
 set cursorcolumn
 
 
