@@ -3,14 +3,20 @@ vimrc
 
 My vimrc. Designed to work better with [Go].
 
-# C/C++ configuration
+It uses ['fatih/vim-go'](http://github.com/fatih/vim-go) to work with [Go]. To
+better faciliate editing [Go] source code,
+[YCM](http://github.com/Valloric/YouCompleteMe) and
+[utilsnips](http://github.com/SirVer/ultisnips) are also used.
 
-## YouCompleteMe
-## clang\_index
+Follow the following steps to use this config:
 
-Follow the instructions on [this blog](http://blog.wuwon.id.au/2011/10/vim-plugin-for-navigating-c-with.html).
-
-Prerequisite: ``sudo apt-get install libboost-dev libboost-iostreams-dev libbdb++-dev``
+- Setup [Go] development environment. Set GOPATH
+- run ``./deploy.sh``.
+- ``sudo apt-get install build-essential cmake``
+- ``sudo apt-get install python-dev``
+- ``sudo apt-get install libclang-dev``
+- ``cd ~/.vim/bundle/YouCompleteMe``
+- ``./install.sh --clang-completer``
 
 
 [Go]: http://golang.org

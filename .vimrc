@@ -19,9 +19,10 @@ let mapleader = ','
 
 " Setup Vundle
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Bundle 'gmarik/Vundle.vim'
 
 " NERDTree
 Bundle 'scrooloose/nerdtree'
@@ -130,6 +131,10 @@ Bundle 'molokai'
 
 " erlang
 Bundle 'jimenezrick/vimerl'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
 
 " ---------------- Some general hack --------------
 filetype plugin indent on
