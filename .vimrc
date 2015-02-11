@@ -78,6 +78,9 @@ Plugin 'uarun/vim-protobuf'
 
 " Go
 Plugin 'fatih/vim-go'
+" Use goimports instead of gofmt.
+let g:go_fmt_command = "goimports"
+let g:go_fmt_autofmt = 1
 
 au FileType go nmap <Leader>i <Plug>(go-import)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
@@ -185,43 +188,38 @@ au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 " Go tags
 " To install gotags:
 "     go get -u github.com/jstemmer/gotags
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
+" let g:tagbar_type_go = {
+"     \ 'ctagstype' : 'go',
+"     \ 'kinds'     : [
+"         \ 'p:package',
+"         \ 'i:imports:1',
+"         \ 'c:constants',
+"         \ 'v:variables',
+"         \ 't:types',
+"         \ 'n:interfaces',
+"         \ 'w:fields',
+"         \ 'e:embedded',
+"         \ 'm:methods',
+"         \ 'r:constructor',
+"         \ 'f:functions'
+"     \ ],
+"     \ 'sro' : '.',
+"     \ 'kind2scope' : {
+"         \ 't' : 'ctype',
+"         \ 'n' : 'ntype'
+"     \ },
+"     \ 'scope2kind' : {
+"         \ 'ctype' : 't',
+"         \ 'ntype' : 'n'
+"     \ },
+"     \ 'ctagsbin'  : 'gotags',
+"     \ 'ctagsargs' : '-sort -silent'
+" \ }
 
 " Translator information
 let g:po_translator = "Nan Deng <monnand@gmail.com>"
 let g:po_lang_team = "Chinese (Simplified)"
 
-" Let's gofmt it before saving it
-" autocmd BufWritePre *.go :Fmt
-" Use goimports instead of gofmt.
-let g:go_fmt_command = "goimports"
-let g:go_fmt_autofmt = 1
 
 " TeX file should be aligned
 autocmd BufWritePre *.tex :set tw=80
@@ -229,7 +227,7 @@ autocmd BufWritePre *.tex :set tw=80
 " golint
 " To install golint:
 "   go get github.com/golang/lint/golint
-set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+" set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 
 " tags
 " C-\ - Open the definition in a new tab
