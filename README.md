@@ -12,9 +12,7 @@ Follow the following steps to use this config:
 
 - Setup [Go] development environment. Set GOPATH
 - run ``./deploy.sh``.
-- ``sudo apt-get install build-essential cmake``
-- ``sudo apt-get install python-dev``
-- ``sudo apt-get install libclang-dev``
+- ``sudo apt-get install build-essential cmake python-dev libclang-dev``
 - ``cd ~/.vim/bundle/YouCompleteMe``
 - ``./install.sh --clang-completer``
 
