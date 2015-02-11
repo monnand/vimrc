@@ -220,7 +220,6 @@ let g:po_lang_team = "Chinese (Simplified)"
 " Let's gofmt it before saving it
 " autocmd BufWritePre *.go :Fmt
 " Use goimports instead of gofmt.
-let g:gofmt_command = "goimports"
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autofmt = 1
 
