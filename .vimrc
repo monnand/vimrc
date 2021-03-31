@@ -4,11 +4,8 @@
 " Go environment, use the following commands to install
 " other tools:
 "
-"   go get github.com/bradfitz/goimports
-"   go get code.google.com/p/rog-go/exp/cmd/godef
-"   go get github.com/nsf/gocode
-"   go get github.com/jstemmer/gotags
-"   go get github.com/golang/lint/golint
+"   go get golang.org/x/tools/cmd/goimports
+"   go get -u golang.org/x/lint/golint
 "
 set nocompatible
 
@@ -81,6 +78,10 @@ Plugin 'fatih/vim-go'
 " Use goimports instead of gofmt.
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autofmt = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
 
 au FileType go nmap <Leader>i <Plug>(go-import)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
